@@ -32,6 +32,7 @@ module.exports = {
         tsx: 'never',
       },
     ],
+    'import/no-unresolved': [2, { ignore: ['^~icons'] }],
 
     /* We strongly recommend that you do not use the no-undef lint rule on TypeScript projects. The checks it provides are already provided by TypeScript without the need for configuration - TypeScript just does this significantly better (Source: https://github.com/typescript-eslint/typescript-eslint/blob/master/docs/getting-started/linting/FAQ.md#i-get-errors-from-the-no-undef-rule-about-global-variables-not-being-defined-even-though-there-are-no-typescript-errors). */
     'no-undef': 'off',
@@ -45,7 +46,11 @@ module.exports = {
     'import/no-extraneous-dependencies': [
       'error',
       {
-        devDependencies: ['tailwind.config.js', 'vite.config.ts'],
+        devDependencies: [
+          'tailwind.config.js',
+          'vite.config.ts',
+          '**/*.spec.ts',
+        ],
       },
     ],
 

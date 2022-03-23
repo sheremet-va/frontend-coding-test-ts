@@ -13,8 +13,18 @@ const mainRoutes: RouteRecordRaw[] = [
   {
     path: '/',
     name: 'Home',
-    props: true,
     component: Home,
+  },
+  {
+    path: '/books',
+    name: 'BooksList',
+    component: () => import('../modules/books/views/BooksList.vue'),
+  },
+  {
+    path: '/books/:bookKey',
+    name: 'BookPreview',
+    props: true,
+    component: () => import('../modules/books/views/BookPreview.vue'),
   },
 ]
 
@@ -28,7 +38,6 @@ const routes: RouteRecordRaw[] = [
   },
   {
     path: '/',
-    props: true,
     component: LayoutMain,
     children: mainRoutes,
   },

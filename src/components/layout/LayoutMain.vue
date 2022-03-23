@@ -17,6 +17,12 @@
                 exact-active-class="bg-gray-900 text-white"
                 >Home</router-link
               >
+              <router-link
+                to="/books"
+                class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                exact-active-class="bg-gray-900 text-white"
+                >Books</router-link
+              >
             </div>
           </div>
         </div>
@@ -26,4 +32,9 @@
   <main class="flex justify-center">
     <router-view />
   </main>
+  <the-toast />
 </template>
+
+<script setup lang="ts">
+import TheToast from '../TheToast.vue'
+</script>
